@@ -21,7 +21,7 @@
             <div class="scooter-card">
                 <img src="Imagenes/Imagen1.png" alt="Scooter 1">
                 <img src="Imagenes/Love.png">
-                <button class="rent-button">Rentar</button>
+                <button class="rent-button" onclick="openPopup('Lugar de Entrega','Imagenes/Imagen1.png')">Rentar</button>
            
             </div>
             <div class="scooter-card">
@@ -58,13 +58,48 @@
                 <button class="rent-button">Rentar</button>
             </div>
         </div>
-        <div id="popup">
-            <div class="popup-content">
-                <span class="close">&times;</span>
-                <h2>Título del Popup</h2>
-                <p>Este es el contenido del popup.</p>
+    </div>
+    <div id="popup" style="display: none;">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2 id="popup-title"></h2>
+            <div class="contenedor">
+                <img id="popup-image" src="Imagenes/Imagen1.png" alt="">
             </div>
+            <form>
+                <div class="container">
+                    <label for="departamento">Departamento</label>
+                    <input type="text" id="departamento" name="departamento" required oninput="toggleLabel(this)">
+                </div>
+                
+                <div class="container">
+                    <label for="ciudad">Ciudad</label>
+                    <input type="text" id="ciudad" name="ciudad" required oninput="toggleLabel(this)">
+                </div>
+                <div class="container">
+                    <label for="direccion">Direccion</label>
+                    <input type="text" id="direccion" name="direccion" required oninput="toggleLabel(this)">
+                </div>
+        
+                <button type="submit">Confirmar</button>
+            </form>
         </div>
-    </main>
+    </div>
+</main>
+<script>
+    function openPopup(title, imagePath) {
+        document.getElementById('popup-title').innerText = title;
+        document.getElementById('popup-image').src = imagePath;
+        document.getElementById('popup').style.display = 'block';
+    }
+
+    function closePopup() {
+        document.getElementById('popup').style.display = 'none';
+    }
+    function toggleLabel(input) {
+            var label = input.previousElementSibling; // Obtiene el elemento label previo al input
+            label.style.opacity = input.value ? 0 : 1; // Si hay texto en el input, oculta el label, de lo contrario, lo muestra
+        }
+</script>
 </body>
 </html>
