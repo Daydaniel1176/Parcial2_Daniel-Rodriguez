@@ -3,6 +3,12 @@
     padding: 0%;
     box-sizing: border-box;
 }
+h1{
+    color: #fff;
+}
+h2{
+    color: #fff;
+}
 body {
     background-image: url(Imagenes/background.png);
     background-repeat: no-repeat;
@@ -84,27 +90,84 @@ header {
     margin-top: 16px;
 }
 #popup {
-    display: none;
     position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-}
-
-.popup-content {
-    background-color: #fefefe;
-    margin: 15% auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #01352C;
+    opacity: 98%;   
     padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
+    border: 0px solid #ccc;
+}
+.popup-content {
+    text-align: center;
+    color: #fff;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+}
+.contenedor {
+    width: auto;
+    height: auto; 
+    border: 0px solid #BAD8B6;
+    background-color: #BAD8B6;
+    padding: 10px;
+    border-radius: 10px;
+    
 }
 
 .close {
-    color: #aaaaaa;
+    cursor: pointer;
     float: right;
-    font-size: 28px;
-    font-weight: bold;
+    font-size: 30px;
+}
+form {
+    margin-top: 20px;
+}
+form label {
+    display: flex;
+    margin-bottom: 5px;
+}
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    color: black;
+    padding: 8px;
+    margin-bottom: 10px;
+    background-color: #BAD8B6;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+form button:hover {
+    background-color: #45a049;
+}
+.container {
+    position: relative;
+    width: auto; 
+    margin-bottom: 20px; 
+}
+
+.container label {
+    position: absolute;
+    left: 7px; 
+    top: 40%; 
+    transform: translateY(-50%); 
+    color: white; 
+    pointer-events: none;
+}
+
+.container input[type="text"] {
+    width: 100%; /* Hace que la caja de texto ocupe todo el ancho */
+    padding: 8px; /* Ajusta el padding para que el texto no esté pegado al borde */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
 }
